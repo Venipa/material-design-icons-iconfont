@@ -15,8 +15,7 @@ $material-design-icons-class-icons-prefix: '' !default;
   src: url("#{$material-design-icons-font-file-path}.eot"); /* For IE6-8 */
   src: local('☺'),
   url("#{$material-design-icons-font-file-path}.woff2") format('woff2'),
-  url("#{$material-design-icons-font-file-path}.woff") format('woff'),
-  url("#{$material-design-icons-font-file-path}.ttf") format('truetype');
+  url("#{$material-design-icons-font-file-path}.woff") format('woff');
 }
 
 .material-icons {

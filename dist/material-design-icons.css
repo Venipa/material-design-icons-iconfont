@@ -6,7 +6,7 @@
   font-display: block;
   src: url("./fonts/MaterialIcons-Round.eot");
   /* For IE6-8 */
-  src: local("☺"), url("./fonts/MaterialIcons-Round.woff2") format("woff2"), url("./fonts/MaterialIcons-Round.woff") format("woff"), url("./fonts/MaterialIcons-Round.ttf") format("truetype"); }
+  src: local("☺"), url("./fonts/MaterialIcons-Round.woff2") format("woff2"), url("./fonts/MaterialIcons-Round.woff") format("woff"); }
 
 .material-icons {
   font-family: 'Material Icons';
