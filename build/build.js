@@ -131,21 +131,22 @@ async function buildScss(sourceScssFilePath, outputCssFilePath) {
     await promisify(fs.writeFile)(outputCssFilePath, content.css);
 }
 
-async function main() {
-
-
+async function main(rounded) {
+    let fontName = 'MaterialIcons-Regular';
+    let url = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+    if (!!rounded) {
+        fontName = 'MaterialIcons-Round';
+        url = 'https://fonts.googleapis.com/icon?family=Material+Icons+Round';
+    }
     let sourceScssFilePath = path.resolve(srcDirPath, 'material-design-icons.scss');
     let outputCssFilePath = path.resolve(outputDirPath, 'material-design-icons.css');
 
     await buildScss(sourceScssFilePath, outputCssFilePath);
-    return;
 
     if (!await promisify(fs.exists)(outputFontsDirPath)) {
         await promisify(mkdirp)(outputFontsDirPath);
     }
 
-    let url = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-    let fontName = 'MaterialIcons-Regular';
 
     let fontsUrls = {};
     await Promise.all(userAgents.map(async userAgent => {
@@ -200,7 +201,7 @@ async function main() {
 }
 
 
-main()
+main(true)
     .then(() => process.exit(0))
     .catch(() => process.exit(1));
 
